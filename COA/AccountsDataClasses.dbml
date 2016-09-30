@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AccountsDB" Class="AccountsDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SERVER\SQLEXPRESS16;Initial Catalog=AccountsDB;Integrated Security=True" SettingsObjectName="COA.Properties.Settings" SettingsPropertyName="AccountsDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Balance_Sheet" Member="Balance_Sheets">
+    <Type Name="Balance_Sheet">
+      <Column Name="SN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Capital" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Net_Profit" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Current_Liability" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Creditors" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Fixed_Asset" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Stock" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Bank" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Cash" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Debitors" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Bank.Account]" Member="Bank_Accounts">
+    <Type Name="Bank_Account">
+      <Column Name="Account_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Cash_Avail" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Cash.Account]" Member="Cash_Accounts">
+    <Type Name="Cash_Account">
+      <Column Name="Account_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Cash_Avail" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Expenditures" Member="Expenditures">
+    <Type Name="Expenditure">
+      <Column Name="TranID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Receiver" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Purpose" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transactions" Member="Transactions">
+    <Type Name="Transaction">
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date_Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Bank" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bill" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Paid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
